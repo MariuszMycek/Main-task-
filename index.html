@@ -14,64 +14,79 @@
   </head>
   <body>
     <!-- Header with page navigation and logo -->
-    <header>
-      <nav class="container">
-        <div class="row">
+    <header class="header">
+      <nav class="header__navigation">
+        <div class="container row">
           <!-- Place for 150x40px logo -->
-          <p>your logo</p>
-          <ul>
-            <li class="col-s-6"><a href="#">home</a></li>
-            <li class="col-s-6"><a href="#">pages</a></li>
-            <li class="col-s-6"><a href="#">feature</a></li>
-            <li class="col-s-6"><a href="#">services</a></li>
-            <li class="col-s-6"><a href="#">blog</a></li>
-            <li class="col-s-6"><a href="#">contact</a></li>
+          <p class="navigation__logo">your logo</p>
+          <ul class="navigation__list">
+            <li class="col-s-6 list__item">
+              <a class="item__link" href="#">home</a>
+            </li>
+            <li class="col-s-6 list__item">
+              <a class="item__link" href="#">pages</a>
+            </li>
+            <li class="col-s-6 list__item">
+              <a class="item__link" href="#">feature</a>
+            </li>
+            <li class="col-s-6 list__item">
+              <a class="item__link" href="#">services</a>
+            </li>
+            <li class="col-s-6 list__item">
+              <a class="item__link" href="#">blog</a>
+            </li>
+            <li class="col-s-6 list__item">
+              <a class="item__link" href="#">contact</a>
+            </li>
           </ul>
         </div>
       </nav>
     </header>
     <!-- Hero section with company slogan -->
     <section class="hero">
-      <div class="hero-slogan">
+      <div class="hero__slogan">
         <!-- Place to input company slogan -->
-        <h1>
-          here you can type<br /><span>your company<br />slogan</span>
+        <h1 class="slogan__text">
+          here you can type<br /><span class="slogan__text--fat"
+            >your company<br />slogan</span
+          >
         </h1>
       </div>
-      <div class="hero-buttons">
-        <button type="button"></button> <button type="button"></button>
-        <button type="button"></button>
+      <div class="hero__buttons-container">
+        <button class="hero__button" type="button"></button>
+        <button class="hero__button" type="button"></button>
+        <button class="hero__button" type="button"></button>
       </div>
     </section>
     <!-- Benefits section with icons and some text -->
     <section class="benefits">
       <div class="row container">
         <div class="col-4 col-m-4 col-s-10 col-s-offset-1">
-          <button type="button" class="icon-button">
+          <button type="button" class="benefits__button">
             <i class="fab fa-react"></i>
           </button>
-          <h3>Research</h3>
-          <p>
+          <h3 class="benefits__title">Research</h3>
+          <p class="benefits__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
         <div class="col-4 col-m-4 col-s-10 col-s-offset-1">
-          <button type="button" class="icon-button">
+          <button type="button" class="benefits__button">
             <i class="fas fa-laptop"></i>
           </button>
-          <h3>Fully Customizable</h3>
-          <p>
+          <h3 class="benefits__title">Fully Customizable</h3>
+          <p class="benefits__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
         <div class="col-4 col-m-4 col-s-10 col-s-offset-1">
-          <button type="button" class="icon-button">
+          <button type="button" class="benefits__button">
             <i class="fas fa-cogs"></i>
           </button>
-          <h3>Work and work</h3>
-          <p>
+          <h3 class="benefits__title">Work and work</h3>
+          <p class="benefits__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -81,9 +96,11 @@
     <!-- Featured Works section with some header and text -->
     <section class="featured-works">
       <div class="row container">
-        <div class="col-10 col-offset-1 col-m-10 col-m-offset-1 col-s-10 col-s-offset-1">
-          <h1>featured works</h1>
-          <p>
+        <div
+          class="col-10 col-offset-1 col-m-10 col-m-offset-1 col-s-10 col-s-offset-1"
+        >
+          <h1 class="featured-works__title">featured works</h1>
+          <p class="featured-works__text">
             Pellentesque habitant morbi tristique senectus et netus et malesuada
             fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
             ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
@@ -96,121 +113,176 @@
     <!-- Gallery section with some pictures -->
     <section class="gallery">
       <div class="row">
-        <div class="col-2 col-m-4 col-s-12 gallery-thumbnail">
-          <div class="gallery-layer">
-            <i class="fas fa-link fa-lg"></i> <i class="fa fa-search fa-lg"></i>
+        <div class="col-2 col-m-4 col-s-12 gallery__item">
+          <div class="gallery__animated-layer">
+            <i class="fas fa-link fa-lg animated-layer__icon"></i>
+            <i class="fa fa-search fa-lg animated-layer__icon"></i>
           </div>
-          <img src="https://picsum.photos/800/600?image=864" alt="" />
+          <img
+            class="gallery__image"
+            src="https://picsum.photos/800/600?image=864"
+            alt=""
+          />
         </div>
-        <div class="col-2 col-m-4 col-s-12 gallery-thumbnail">
-          <div class="gallery-layer">
-            <i class="fas fa-link fa-lg"></i> <i class="fa fa-search fa-lg"></i>
+        <div class="col-2 col-m-4 col-s-12 gallery__item">
+          <div class="gallery__animated-layer">
+            <i class="fas fa-link fa-lg animated-layer__icon"></i>
+            <i class="fa fa-search fa-lg animated-layer__icon"></i>
           </div>
-          <img src="https://picsum.photos/800/600?image=6" alt="" />
+          <img
+            class="gallery__image"
+            src="https://picsum.photos/800/600?image=6"
+            alt=""
+          />
         </div>
-        <div class="col-2 col-m-4 col-s-12 gallery-thumbnail">
-          <div class="gallery-layer">
-            <i class="fas fa-link fa-lg"></i> <i class="fa fa-search fa-lg"></i>
+        <div class="col-2 col-m-4 col-s-12 gallery__item">
+          <div class="gallery__animated-layer">
+            <i class="fas fa-link fa-lg animated-layer__icon"></i>
+            <i class="fa fa-search fa-lg animated-layer__icon"></i>
           </div>
-          <img src="https://picsum.photos/800/600?image=65" alt="" />
+          <img
+            class="gallery__image"
+            src="https://picsum.photos/800/600?image=65"
+            alt=""
+          />
         </div>
-        <div class="col-2 col-m-4 col-s-12 gallery-thumbnail">
-          <div class="gallery-layer">
-            <i class="fas fa-link fa-lg"></i> <i class="fa fa-search fa-lg"></i>
+        <div class="col-2 col-m-4 col-s-12 gallery__item">
+          <div class="gallery__animated-layer">
+            <i class="fas fa-link fa-lg animated-layer__icon"></i>
+            <i class="fa fa-search fa-lg animated-layer__icon"></i>
           </div>
-          <img src="https://picsum.photos/800/600?image=103" alt="" />
+          <img
+            class="gallery__image"
+            src="https://picsum.photos/800/600?image=103"
+            alt=""
+          />
         </div>
-        <div class="col-4 col-m-8 col-s-12 gallery-thumbnail">
-          <div class="gallery-layer">
-            <i class="fas fa-link fa-lg"></i> <i class="fa fa-search fa-lg"></i>
+        <div class="col-4 col-m-8 col-s-12 gallery__item">
+          <div class="gallery__animated-layer">
+            <i class="fas fa-link fa-lg animated-layer__icon"></i>
+            <i class="fa fa-search fa-lg animated-layer__icon"></i>
           </div>
-          <img src="https://picsum.photos/800/600?image=249" alt="" />
+          <img
+            class="gallery__image"
+            src="https://picsum.photos/800/600?image=249"
+            alt=""
+          />
         </div>
       </div>
       <div class="row">
-        <div class="col-4 col-m-8 col-s-12 gallery-thumbnail">
-          <div class="gallery-layer">
-            <i class="fas fa-link fa-lg"></i> <i class="fa fa-search fa-lg"></i>
+        <div class="col-4 col-m-8 col-s-12 gallery__item">
+          <div class="gallery__animated-layer">
+            <i class="fas fa-link fa-lg animated-layer__icon"></i>
+            <i class="fa fa-search fa-lg animated-layer__icon"></i>
           </div>
-          <img src="https://picsum.photos/800/600?image=389" alt="" />
+          <img
+            class="gallery__image"
+            src="https://picsum.photos/800/600?image=389"
+            alt=""
+          />
         </div>
-        <div class="col-2 col-m-4 col-s-12 gallery-thumbnail">
-          <div class="gallery-layer">
-            <i class="fas fa-link fa-lg"></i> <i class="fa fa-search fa-lg"></i>
+        <div class="col-2 col-m-4 col-s-12 gallery__item">
+          <div class="gallery__animated-layer">
+            <i class="fas fa-link fa-lg animated-layer__icon"></i>
+            <i class="fa fa-search fa-lg animated-layer__icon"></i>
           </div>
-          <img src="https://picsum.photos/800/600?image=397" alt="" />
+          <img
+            class="gallery__image"
+            src="https://picsum.photos/800/600?image=397"
+            alt=""
+          />
         </div>
-        <div class="col-2 col-m-4 col-s-12 gallery-thumbnail">
-          <div class="gallery-layer">
-            <i class="fas fa-link fa-lg"></i> <i class="fa fa-search fa-lg"></i>
+        <div class="col-2 col-m-4 col-s-12 gallery__item">
+          <div class="gallery__animated-layer">
+            <i class="fas fa-link fa-lg animated-layer__icon"></i>
+            <i class="fa fa-search fa-lg animated-layer__icon"></i>
           </div>
-          <img src="https://picsum.photos/800/600?image=3" alt="" />
+          <img
+            class="gallery__image"
+            src="https://picsum.photos/800/600?image=3"
+            alt=""
+          />
         </div>
-        <div class="col-2 col-m-4 col-s-12 gallery-thumbnail">
-          <div class="gallery-layer">
-            <i class="fas fa-link fa-lg"></i> <i class="fa fa-search fa-lg"></i>
+        <div class="col-2 col-m-4 col-s-12 gallery__item">
+          <div class="gallery__animated-layer">
+            <i class="fas fa-link fa-lg animated-layer__icon"></i>
+            <i class="fa fa-search fa-lg animated-layer__icon"></i>
           </div>
-          <img src="https://picsum.photos/800/600?image=64" alt="" />
+          <img
+            class="gallery__image"
+            src="https://picsum.photos/800/600?image=64"
+            alt=""
+          />
         </div>
-        <div class="col-2 col-m-4 col-s-12 gallery-thumbnail">
-          <div class="gallery-layer">
-            <i class="fas fa-link fa-lg"></i> <i class="fa fa-search fa-lg"></i>
+        <div class="col-2 col-m-4 col-s-12 gallery__item">
+          <div class="gallery__animated-layer">
+            <i class="fas fa-link fa-lg animated-layer__icon"></i>
+            <i class="fa fa-search fa-lg animated-layer__icon"></i>
           </div>
-          <img src="https://picsum.photos/800/600?image=9" alt="" />
+          <img
+            class="gallery__image"
+            src="https://picsum.photos/800/600?image=9"
+            alt=""
+          />
         </div>
       </div>
     </section>
     <!-- Team section with pictures of company most important people -->
     <section class="team">
       <div class="row container">
-        <div class="col-3 col-m-6 col-s-12 team-member">
-          <div class="team-layer">CEO</div>
+        <div class="col-3 col-m-6 col-s-12 team__team-member">
+          <div class="team-member__function-layer">CEO</div>
           <img
+            class="team-member__image"
             src="https://images.unsplash.com/photo-1529111290557-82f6d5c6cf85?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7ba531e76a0177cd870c73646f392981&auto=format&fit=crop&w=500&q=60"
             alt=""
           />
-          <h3>Dexter Gilbert</h3>
+          <h3 class="team-member__name">Dexter Gilbert</h3>
         </div>
-        <div class="col-3 col-m-6 col-s-12 team-member">
-          <div class="team-layer">Marketing Director</div>
+        <div class="col-3 col-m-6 col-s-12 team__team-member">
+          <div class="team-member__function-layer">Marketing Director</div>
           <img
+            class="team-member__image"
             src="https://images.unsplash.com/photo-1542786483-4e01206f7a36?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d249905adeed761e569ec4690f01d8df&auto=format&fit=crop&w=500&q=60"
             alt=""
           />
-          <h3>Mary Collier</h3>
+          <h3 class="team-member__name">Mary Collier</h3>
         </div>
-        <div class="col-3 col-m-6 col-s-12 team-member">
-          <div class="team-layer">Secretary</div>
+        <div class="col-3 col-m-6 col-s-12 team__team-member">
+          <div class="team-member__function-layer">Secretary</div>
           <img
+            class="team-member__image"
             src="https://images.unsplash.com/photo-1542487869-354540de9982?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=808831f0945af51b4a9d642283d5d0ad&auto=format&fit=crop&w=500&q=60"
             alt=""
           />
-          <h3>Stefan Morrison</h3>
+          <h3 class="team-member__name">Stefan Morrison</h3>
         </div>
-        <div class="col-3 col-m-6 col-s-12 team-member">
-          <div class="team-layer">IT Consultant</div>
+        <div class="col-3 col-m-6 col-s-12 team__team-member">
+          <div class="team-member__function-layer">IT Consultant</div>
           <img
+            class="team-member__image"
             src="https://images.unsplash.com/photo-1503593245033-a040be3f3c82?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6377c4ad91dd5c06bd7e68121329ceaa&auto=format&fit=crop&w=500&q=60"
             alt=""
           />
-          <h3>Bill Smith</h3>
+          <h3 class="team-member__name">Bill Smith</h3>
         </div>
       </div>
     </section>
     <!-- Promotional section with picture and some text -->
-    <section class="promotional-image">
+    <section class="promotional-section">
       <div class="container row">
         <div class="col-4 col-m-4 col-s-12">
           <img
+            class="promotional-section__image"
             src="https://zapodaj.net/images/1f8cffe061d45.png"
             alt="Cellphone image"
           />
         </div>
         <div class="col-8 col-m-8 col-s-12">
-          <h1>your awesome title</h1>
+          <h1 class="promotional-section__title">your awesome title</h1>
           <div class="row">
             <div class="col-8 col-m-8 col-s-12">
-              <p>
+              <p class="promotional-section__text">
                 Pellentesque habitant morbi tristique senectus et netus et
                 malesuada fames ac turpis egestas. Vestibulum tortor quam,
                 feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
@@ -219,7 +291,9 @@
               </p>
             </div>
             <div class="col-4 col-m-4 col-s-12">
-              <p class="italic">
+              <p
+                class="promotional-section__text promotional-section__text--italic"
+              >
                 Donec eu libero sit amet quam egestas semper. Aenean ultricies
                 mi vitae est. Mauris placerat eleifend leo.
               </p>
@@ -232,20 +306,20 @@
     <section class="numbers">
       <div class="container row">
         <div class="col-3 col-m-3 col-s-12">
-          <h1>455</h1>
-          <p>followers</p>
+          <h1 class="numbers__digits">455</h1>
+          <p class="numbers__description">followers</p>
         </div>
         <div class="col-3 col-m-3  col-s-12">
-          <h1>1991</h1>
-          <p>since</p>
+          <h1 class="numbers__digits">1991</h1>
+          <p class="numbers__description">since</p>
         </div>
         <div class="col-3 col-m-3  col-s-12">
-          <h1>806</h1>
-          <p>happy clients</p>
+          <h1 class="numbers__digits">806</h1>
+          <p class="numbers__description">happy clients</p>
         </div>
         <div class="col-3 col-m-3  col-s-12">
-          <h1>923</h1>
-          <p>projects</p>
+          <h1 class="numbers__digits">923</h1>
+          <p class="numbers__description">projects</p>
         </div>
       </div>
     </section>
@@ -255,49 +329,59 @@
     <footer class="footer">
       <div class="container row">
         <div class="col-4 col-m-8 col-s-12">
-          <h3>about us</h3>
-          <p>
+          <h3 class="footer__title">about us</h3>
+          <p class="footer__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nisi
             est, finibus eget urna a, feugiat euismod magna. Aliquam erat
             volutpat. Vestibulum convallis nunc nec justo vestibulum rutrum.
           </p>
         </div>
-        <div class="col-4 col-m-6  col-s-12 footer-contacts">
-          <h3>get in touch</h3>
+        <div class="col-4 col-m-6  col-s-12 footer__contacts">
+          <h3 class="footer__title footer__title--contacts">get in touch</h3>
           <div class="row">
-            <div class="col-4 col-m-4  col-s-4 left-col"><p>Address:</p></div>
+            <div class="col-4 col-m-4  col-s-4 contacts__left-col">
+              <p class="footer__text">Address:</p>
+            </div>
             <div class="col-8 col-m-8  col-s-8">
-              <p>66 South Street, Window 6 Wonderland</p>
+              <p class="footer__text">66 South Street, Window 6 Wonderland</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-4 col-m-4 col-s-4 left-col"><p>Phone:</p></div>
+            <div class="col-4 col-m-4 col-s-4 contacts__left-col">
+              <p class="footer__text">Phone:</p>
+            </div>
             <div class="col-8 col-m-8 col-s-8">
-              <p>
+              <p class="footer__text">
                 +440 1232136 - Office <br />
                 +440 2321456 - Fax
               </p>
             </div>
           </div>
           <div class="row">
-            <div class="col-4 col-m-4 col-s-4 left-col"><p>Email:</p></div>
-            <div class="col-8 col-m-8 col-s-8"><p>freepik@sitename.com</p></div>
+            <div class="col-4 col-m-4 col-s-4 contacts__left-col">
+              <p class="footer__text">Email:</p>
+            </div>
+            <div class="col-8 col-m-8 col-s-8">
+              <p class="footer__text">freepik@sitename.com</p>
+            </div>
           </div>
         </div>
         <div class="col-4 col-m-6 col-s-12">
-          <h3>social media</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div class="footer-social-icon">
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-dribbble"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+          <h3 class="footer__title">social media</h3>
+          <p class="footer__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <div>
+            <a href="#"><i class="fab fa-youtube footer__social-icons"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g footer__social-icons"></i></a>
+            <a href="#"><i class="fab fa-facebook-f footer__social-icons"></i></a>
+            <a href="#"><i class="fab fa-dribbble footer__social-icons"></i></a>
+            <a href="#"><i class="fab fa-twitter footer__social-icons"></i></a>
+            <a href="#"><i class="fab fa-instagram footer__social-icons"></i></a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">&copy;Copyrights 2018</div>
+      <div class="footer__bottom-bar">&copy;Copyrights 2018</div>
     </footer>
   </body>
 </html>

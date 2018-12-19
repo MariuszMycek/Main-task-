@@ -9,14 +9,6 @@ $dark-gray: #626260;
 $anthracite: #4b4e4d;
 
 // Mixins
-@mixin benefits-p {
-    text-align: center;
-    p {
-        line-height: 28px;
-        color: #959595;
-        margin-top: 0;
-    }
-}
 @mixin no-highlight {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -327,91 +319,89 @@ section {
 }
 
 // Header with page navigation and logo */
-header {
+.header__navigation {
     background-color: $background-dark;
     height: 60px;
     @include breakpoint(mobile) {
         height: 255px;
     }
-    ul {
+}
+.navigation__logo {
+    display: inline-block;
+    font-weight: bold;
+    color: $white;
+    font-size: 30px;
+    line-height: 60px;
+    margin: 0 0 0 20px;
+    text-transform: uppercase;
+    @include breakpoint(mobile) {
+        display: block;
+        text-align: center;
         margin: 0;
-        padding: 0;
-        float: right;
-        list-style-type: none;
-        @include breakpoint(mobile) {
-            float: none;
+    }
+}
+.navigation__list {
+    margin: 0;
+    padding: 0;
+    float: right;
+    list-style-type: none;
+    @include breakpoint(mobile) {
+        float: none;
+    }
+}
+.list__item {
+    display: inline-block;
+    @include transition(all, 0.2s, linear);
+    @include breakpoint(mobile) {
+        text-align: center;
+        background-color: transparent;
+    }
+    &:hover {
+        @include breakpoint(desktop) {
+            background-color: $anthracite;
+            .item__link {
+                @include breakpoint(desktop) {
+                    color: $sky-blue;
+                }
+            }
         }
     }
-    li {
-        display: inline-block;
-        @include transition(all, 0.2s, linear);
+    &:active {
+        @include breakpoint(tablet) {
+            background-color: $anthracite;
+            .item__link {
+                @include breakpoint(tablet) {
+                    color: $sky-blue;
+                }
+            }
+        }
         @include breakpoint(mobile) {
-            text-align: center;
             background-color: transparent;
-        }
-        &:hover {
-            @include breakpoint(desktop) {
-                background-color: $anthracite;
-                a {
-                    @include breakpoint(desktop) {
-                        color: $sky-blue;
-                    }
-                }
-            }
-        }
-        &:active {
-            @include breakpoint(tablet) {
-                background-color: $anthracite;
-                a {
-                    @include breakpoint(tablet) {
-                        color: $sky-blue;
-                    }
-                }
-            }
-            @include breakpoint(mobile) {
-                background-color: transparent;
-            }
-        }
-        a {
-            line-height: 60px;
-            padding: 0 10px;
-            text-decoration: none;
-            color: $white;
-            text-transform: uppercase;
-            font-size: 12px;
-            font-weight: bold;
-            @include transition(all, 0.2s, linear);
-            @include no-highlight;
-            @include breakpoint(tablet) {
-                padding: 0;
-            }
-            @include breakpoint(mobile) {
-                width: 90%;
-                margin: 2px;
-                font-size: 16px;
-                display: inline-block;
-                background-color: $anthracite;
-            }
-        }
-    }
-    img {
-        padding: 10px 0;
-    }
-    p {
-        display: inline-block;
-        font-weight: bold;
-        color: $white;
-        font-size: 30px;
-        line-height: 60px;
-        margin: 0 0 0 20px;
-        text-transform: uppercase;
-        @include breakpoint(mobile) {
-            display: block;
-            text-align: center;
-            margin: 0;
         }
     }
 }
+.item__link {
+    line-height: 60px;
+    padding: 0 10px;
+    text-decoration: none;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    @include transition(all, 0.2s, linear);
+    @include no-highlight;
+    @include breakpoint(tablet) {
+        padding: 0;
+    }
+    @include breakpoint(mobile) {
+        width: 90%;
+        margin: 2px;
+        font-size: 16px;
+        display: inline-block;
+        background-color: $anthracite;
+    }
+}
+
 // Hero section with company slogan
 .hero {
     background-image: url("https://images.unsplash.com/1/macbook-air-all-faded-and-stuff.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9f8e8313056d2a38f1ed088240e90095&auto=format&fit=crop&w=1350&q=80");
@@ -426,7 +416,7 @@ header {
         height: 100vh;
     }
 }
-.hero-slogan {
+.hero__slogan {
     background-color: rgba(50, 50, 50, 0.55);
     float: right;
     width: 860px;
@@ -440,111 +430,118 @@ header {
     @include breakpoint(mobile_landscape) {
         margin-top: 80px;
     }
-    h1 {
-        color: $white;
-        padding: 10px 140px 10px 30px;
-        font-weight: 300;
-        padding: 10px 10px 10px 30px;
-        span {
-            font-weight: 900;
-        }
-    }
 }
-
+.slogan__text {
+    color: $white;
+    padding: 10px 140px 10px 30px;
+    font-weight: 300;
+    padding: 10px 10px 10px 30px;
+}
+.slogan__text--fat {
+    font-weight: 900;
+}
 // Some buttons for future use
-.hero-buttons {
+.hero__buttons-container {
     position: absolute;
     bottom: 20px;
     left: calc(50vw - 100px);
-    button {
-        height: 20px;
-        width: 20px;
-        border-radius: 50%;
-        background-color: #7f7e7c;
-        border: none;
-        cursor: pointer;
-        margin: 0 20px;
-        float: left;
-        @include no-highlight;
-        &:hover {
-            @include breakpoint(desktop) {
-                background-color: $white;
-            }
+}
+.hero__button {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #7f7e7c;
+    border: none;
+    cursor: pointer;
+    margin: 0 20px;
+    float: left;
+    @include no-highlight;
+    &:hover {
+        @include breakpoint(desktop) {
+            background-color: $white;
         }
-        &:active {
-            @include breakpoint(tablet) {
-                background-color: $white;
-            }
+    }
+    &:active {
+        @include breakpoint(tablet) {
+            background-color: $white;
         }
     }
 }
-
 // Benefits section with icons and some text
 
 .benefits {
-    @include benefits-p;
-    h3 {
-        color: $background-dark;
-        font-size: 18px;
-        margin-bottom: 10px;
-        @include transition(all,0.1s,linear);
-    }
-    .icon-button {
-        background-color: $background-dark;
-        width: 90px;
-        height: 90px;
-        border: none;
-        border-radius: 15px;
-        outline: none;
-        cursor: pointer;
-        line-height: 90px;
-        color: $white;
-        font-size: 50px;
-        margin: 20px 0 10px;
-        @include transition(all,0.1s,linear);
-        @include no-highlight;
-        &:hover {
-            @include breakpoint(desktop) {
-                background-color: $sky-blue;
-                 + h3 {
-                    @include breakpoint(desktop) {
-                        color: $sky-blue;
-                    }
+    text-align: center;
+}
+.benefits__title {
+    color: $background-dark;
+    font-size: 18px;
+    margin-bottom: 10px;
+    @include transition(all,0.1s,linear);
+}
+.benefits__text {
+    line-height: 28px;
+    color: #959595;
+    margin-top: 0;
+}
+.benefits__button {
+    background-color: $background-dark;
+    width: 90px;
+    height: 90px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    line-height: 90px;
+    color: $white;
+    font-size: 50px;
+    margin: 20px 0 10px;
+    @include transition(all,0.1s,linear);
+    @include no-highlight;
+    &:hover {
+        @include breakpoint(desktop) {
+            background-color: $sky-blue;
+             + .benefits__title {
+                @include breakpoint(desktop) {
+                    color: $sky-blue;
                 }
             }
         }
-        &:active {
-            @include breakpoint(tablet) {
-                background-color: $sky-blue;
-                 + h3 {
-                    @include breakpoint(tablet) {
-                        color: $sky-blue;
-                    }
+    }
+    &:active {
+        @include breakpoint(tablet) {
+            background-color: $sky-blue;
+             + .benefits__title {
+                @include breakpoint(tablet) {
+                    color: $sky-blue;
                 }
             }
         }
     }
 }
+
 
 // Featured Works section with some header and text
 .featured-works {
-    @include benefits-p;
-    h1 {
-        font-size: 36px;
-        margin-bottom: 15px;
-        font-weight: 900;
-    }
+    @extend .benefits;
+}
+.featured-works__title {
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+.featured-works__text {
+    @extend .benefits__text;
 }
 
 // Gallery section with some pictures
-section.gallery {
+.gallery {
     margin-bottom: 100px;
     @include breakpoint(mobile) {
         margin-top: 50px;
         margin-bottom: 70px;
     }
 }
-.gallery-thumbnail {
+.gallery__item {
     padding: 0;
     height: 200px;
     position: relative;
@@ -560,19 +557,14 @@ section.gallery {
         width: auto;
     }
     &:hover {
-        .gallery-layer {
+        .gallery__animated-layer {
             @include breakpoint(desktop) {
                 top: 0;
             }
         }
     }
-    img {
-        width: 100%;
-        height: 100%;
-        @include object-fit;
-    }
 }
-.gallery-layer {
+.gallery__animated-layer {
     position: absolute;
     width: 100%;
     top: -200px;
@@ -586,7 +578,7 @@ section.gallery {
         height: 100%;
     }
 }
-.fa-lg {
+.animated-layer__icon {
     font-size: 20px;
     color: #000;
     background-color: $white;
@@ -612,64 +604,65 @@ section.gallery {
         }
     }
 }
+.gallery__image {
+    width: 100%;
+    height: 100%;
+    @include object-fit;
+}
 
 // Team section with pictures of company most important people
-
-.team {
-    .team-member {
-        position: relative;
-        @include breakpoint(tablet) {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        .team-layer {
-            text-align: center;
-            position: absolute;
-            height: 210px;
-            width: 210px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.4);
-            color: $white;
-            cursor: pointer;
-            line-height: 210px;
-            font-size: 20px;
-            font-weight: bold;
-            opacity: 0;
-            @include transition(opacity, 0.3s, ease-out);
-            @include no-highlight;
-            @include breakpoint(tablet) {
-                left: calc(50% - 105px);
-                top: 200px;
-                height: 30px;
-                opacity: 1;
-                border-radius: 10px;
-                line-height: 30px;
-            }
-            &:hover {
-                @include breakpoint(desktop) {
-                    opacity: 0.7;
-                }
-            }
-        }
-        h3 {
-            color: $dark-gray;
-            font-size: 22px;
-            font-weight: bold;
-            text-transform: none;
-            text-align: center;
-        }
-        img {
-            height: 210px;
-            width: 210px;
-            border-radius: 50%;
-            @include object-fit;
+.team__team-member {
+    position: relative;
+    @include breakpoint(tablet) {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+}
+.team-member__function-layer {
+    text-align: center;
+    position: absolute;
+    height: 210px;
+    width: 210px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: $white;
+    cursor: pointer;
+    line-height: 210px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    @include transition(opacity, 0.3s, ease-out);
+    @include no-highlight;
+    @include breakpoint(tablet) {
+        left: calc(50% - 105px);
+        top: 200px;
+        height: 30px;
+        opacity: 1;
+        border-radius: 10px;
+        line-height: 30px;
+    }
+    &:hover {
+        @include breakpoint(desktop) {
+            opacity: 0.7;
         }
     }
 }
-
+.team-member__name {
+    color: $dark-gray;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: none;
+    text-align: center;
+}
+.team-member__image {
+    height: 210px;
+    width: 210px;
+    border-radius: 50%;
+    @include object-fit;
+}
 // Promotional section with picture and some text
 
-.promotional-image {
+.promotional-section {
     background-color: $dark-gray;
     height: 356px;
     margin-top: 80px;
@@ -682,44 +675,44 @@ section.gallery {
         margin: 25px 10px;
         height: auto;
     }
-    img {
-        min-height: 275px;
-        margin-top: 80px;
+}
+.promotional-section__image {
+    min-height: 275px;
+    margin-top: 80px;
+    width: 100%;
+    @include breakpoint(tablet) {
+        position: absolute;
+        bottom: 0;
+        width: 250px;
+    }
+    @include breakpoint(mobile) {
+        margin-top: 20px;
+        position: relative;
         width: 100%;
-        @include breakpoint(tablet) {
-            position: absolute;
-            bottom: 0;
-            width: 250px;
-        }
-        @include breakpoint(mobile) {
-            margin-top: 20px;
-            position: relative;
-            width: 100%;
-        }
     }
-    h1 {
-        font-size: 36px;
-        margin: 100px 0 0 20px;
-        font-weight: 900;
-        color: $white;
-        letter-spacing: 2px;
-        @include breakpoint(mobile) {
-            margin: 20px 0 0 20px;
-        }
+}
+.promotional-section__title {
+    font-size: 36px;
+    margin: 100px 0 0 20px;
+    font-weight: 900;
+    color: $white;
+    letter-spacing: 2px;
+    @include breakpoint(mobile) {
+        margin: 20px 0 0 20px;
     }
-    p {
-        line-height: 24px;
-        color: $light-gray;
-        @include breakpoint(tablet) {
-            font-size: 14px;
-        }
-        @include breakpoint(mobile) {
-            font-size: 16px;
-        }
+}
+.promotional-section__text {
+    line-height: 24px;
+    color: $light-gray;
+    @include breakpoint(tablet) {
+        font-size: 14px;
     }
-    .italic {
-        font-style: italic;
+    @include breakpoint(mobile) {
+        font-size: 16px;
     }
+}
+.promotional-section__text--italic {
+    font-style: italic;
 }
 
 // Numbers section with some numbers about company activity
@@ -730,68 +723,66 @@ section.gallery {
     @include breakpoint(mobile) {
         margin-bottom: 35px;
     }
-    h1 {
-        color: $background-dark;
-        font-size: 60px;
-        font-weight: 900;
-        margin: 10px;
-    }
-    p {
-        color: $sky-blue;
-        font-weight: bold;
-        margin: 10px;
-    }
+}
+.numbers__digits {
+    color: $background-dark;
+    font-size: 60px;
+    font-weight: 900;
+    margin: 10px;
+}
+.numbers__description {
+    color: $sky-blue;
+    font-weight: bold;
+    margin: 10px;
 }
 
 // Footer with additional information, contacts and links to social portals
 .footer {
     background-color: $background-dark;
-    h3 {
-        color: $white;
-        margin-top: 50px;
-        font-size: 20px;
-        font-weight: 900;
-        &::after {
-            content: "";
-            background-color: $white;
-            width: 90px;
-            height: 2px;
-            display: inline-block;
-            margin: 7px 15px;
-        }
-    }
-    p {
-        line-height: 22px;
-        color: $light-gray;
-        margin-top: 0;
-        font-size: 15px;
+}
+.footer__title {
+    color: $white;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 900;
+    &::after {
+        content: "";
+        background-color: $white;
+        width: 90px;
+        height: 2px;
+        display: inline-block;
+        margin: 7px 15px;
     }
 }
-.footer-contacts {
+.footer__title--contacts {
+    padding-left: 20px;
+    @include breakpoint(mobile) {
+        padding-left: 0;
+    }
+}
+.footer__text {
+    line-height: 22px;
+    color: $light-gray;
+    margin-top: 0;
+    font-size: 15px;
+}
+.footer__contacts {
     padding-left: 0;
-    h3 {
-        padding-left: 20px;
-        @include breakpoint(mobile) {
-            padding-left: 0;
-        }
-    }
-    .left-col {
-        font-weight: bold;
-    }
 }
-.footer-social-icon {
-    .fab {
-        background-color: $sky-blue;
-        color: $white;
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-        line-height: 30px;
-        text-align: center;
-        margin-right: 7px;
-    }
+.contacts__left-col {
+    font-weight: bold;
 }
-.footer-bottom {
+.footer__social-icons {
+    background-color: $sky-blue;
+    color: $white;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 7px;
+}
+.footer__bottom-bar {
     text-align: center;
     background-color: #292b2b;
     color: $white;
